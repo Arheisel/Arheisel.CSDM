@@ -248,14 +248,14 @@ public player_giveitems(parm[1])
 		}
 		
 		/* Give a T his/her pistol */
-		if ( get_user_team(id)==TS && !foundGlock )
+		if ( get_user_team(id) == TS && !foundGlock )
 		{
 			give_item(id,"weapon_glock18")
 			give_item(id,"ammo_9mm")
 			give_item(id,"ammo_9mm")
 		}
 		/* Give a CT his/her pistol */
-		else if ( get_user_team(id)==CTS && !foundUSP )
+		else if ( get_user_team(id) == CTS && !foundUSP )
 		{
 			give_item(id,"weapon_usp")
 			give_item(id,"ammo_45acp")
@@ -287,12 +287,12 @@ public protect(id) // This is the function for the task_on godmode
 	new SPShell = 25
 	set_user_godmode(id, 1)
 
-	if(get_user_team(id) == 1)
+	if(get_user_team(id) == TS)
 	{
 		set_user_rendering(id, kRenderFxGlowShell, 255, 0, 0, kRenderNormal, SPShell)
 	}
 	
-	if(get_user_team(id) == 2)
+	if(get_user_team(id) == CTS)
 	{
 		set_user_rendering(id, kRenderFxGlowShell, 0, 0, 255, kRenderNormal, SPShell)
 	}
